@@ -68,7 +68,7 @@ group :development do
   gem "web-console"
   gem "capistrano"
   gem "capistrano-rails"
-  gem 'capistrano-rbenv'
+  gem 'capistrano-rvm'
 end
 
 group :test do
