@@ -71,6 +71,10 @@ group :development do
   gem 'capistrano-rvm'
 end
 
+gem 'net-ssh'
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"

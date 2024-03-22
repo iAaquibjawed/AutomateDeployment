@@ -6,6 +6,9 @@ set :repo_url, "git@github.com:iAaquibjawed/AutomateDeployment.git"
 
 set :deploy_to, '/home/ubuntu/demo_app'
 
+set :user, "ubuntu"
+
+
 set :use_sudo, true
 
 # Default branch is :master
@@ -24,13 +27,13 @@ set :branch, 'master'
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, "config/database.yml", 'config/master.key'
+# set :linked_files, ["config/database.yml", 'config/master.key']
 
 # Default value for linked_dirs is []
-set :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "vendor", "storage"
+set :linked_dirs, ["log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "vendor", "storage"]
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

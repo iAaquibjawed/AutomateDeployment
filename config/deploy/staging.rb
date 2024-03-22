@@ -49,22 +49,28 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-# server "example.com",
-#   user: "user_name",
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: "user_name", # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: true,
-#     auth_methods: %w(publickey password)
-    # password: "please use keys"
-#   }
+server "18.234.239.216",
+  user: "ubuntu",
+  roles: %w{web app},
+  ssh_options: {
+    user: "ubuntu", # overrides user setting above
+    keys: %w(/home/sam/.ssh/ec2_private),
+    forward_agent: true,
+    auth_methods: %w(publickey)
+  }
 
-server '65.2.73.207', user: 'ubuntu', roles: %w{web app db}
-set :ssh_options, {
-forward_agent: true,
-auth_methods: %w[publickey],
-keys: %w[/home/sam/Desktop/practice/ubuntukeypair.pem]
-}
+# server '18.234.239.216', user: 'ubuntu', roles: %w{web app db}
+# set :ssh_options, {
+# forward_agent: true,
+# auth_methods: %w[publickey],
+# keys: %w[/home/sam/Desktop/practice/ubuntukeypair.pem]
+# }
+
+# set :ssh_options, {
+#     forward_agent: false,
+#     auth_methods: %w(password),
+#     password: 'user_deployers_password',
+#     user: 'deployer',
+# }
 
 
